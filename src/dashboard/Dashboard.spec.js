@@ -6,7 +6,7 @@ import "jest-dom/extend-expect";
 import Controls from "./../controls/Controls";
 import Display from "./../display/Display";
 
-xit("Checks if close button is called", () => {
+it("Checks if close button is called", () => {
   const mockFn = jest.fn();
   const { getByText } = render(<Controls toggleClosed={mockFn} />);
 
@@ -17,7 +17,7 @@ xit("Checks if close button is called", () => {
   expect(mockFn).toHaveBeenCalled();
 });
 
-xit("Checks if open button is called", () => {
+it("Checks if open button is called", () => {
   const mockFn = jest.fn();
   const { getByText } = render(
     <Controls closed={true} toggleClosed={mockFn} />
@@ -30,7 +30,7 @@ xit("Checks if open button is called", () => {
   expect(mockFn).toHaveBeenCalled();
 });
 
-xit("Checks if unlock button is called", () => {
+it("Checks if unlock button is called", () => {
   const mockFn = jest.fn();
   const { getByText } = render(
     <Controls closed={true} locked={true} toggleLocked={mockFn} />
@@ -43,7 +43,7 @@ xit("Checks if unlock button is called", () => {
   expect(mockFn).toHaveBeenCalled();
 });
 
-xit("Checks if lock button is called", () => {
+it("Checks if lock button is called", () => {
   const mockFn = jest.fn();
 
   const { getByText } = render(
@@ -57,7 +57,7 @@ xit("Checks if lock button is called", () => {
   expect(mockFn).toHaveBeenCalled();
 });
 
-xit("Checks closed is diplayed and gate is unlocked", () => {
+it("Checks closed is diplayed and gate is unlocked", () => {
   const { getByText } = render(<Display closed={true} locked={false} />);
 
   const text = getByText("Closed");
@@ -67,7 +67,7 @@ xit("Checks closed is diplayed and gate is unlocked", () => {
   expect(text2).toBeInTheDocument();
 });
 
-xit("Checks closed is diplayed  and door is locked", () => {
+it("Checks closed is diplayed  and door is locked", () => {
   const { getByText } = render(<Display closed={true} locked={true} />);
 
   const text = getByText("Closed");
@@ -76,14 +76,14 @@ xit("Checks closed is diplayed  and door is locked", () => {
   expect(text).toBeInTheDocument();
   expect(text2).toBeInTheDocument();
 });
-xit("Checks open is displayed and door is unlocked", () => {
+it("Checks open is displayed and door is unlocked", () => {
   const { getByText } = render(<Display opened={true} unlocked={true} />);
   const text = getByText("Open");
   const text2 = getByText("Unlocked");
   expect(text).toBeInTheDocument();
   expect(text2).toBeInTheDocument();
 });
-xit("Checks closed is displayed and door is unlocked", () => {
+it("Checks closed is displayed and door is unlocked", () => {
   const { getByText } = render(<Display close={true} unlocked={true} />);
   const text = getByText("Closed");
   const text2 = getByText("Unlocked");
@@ -91,7 +91,7 @@ xit("Checks closed is displayed and door is unlocked", () => {
   expect(text2).toBeInTheDocument();
 });
 
-xit("Checks if buttons are there", () => {
+it("Checks if buttons are there", () => {
   const { queryByText } = render(<Controls />);
 
   const closeButton = queryByText("Close Gate");

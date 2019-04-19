@@ -9,11 +9,11 @@ const testData = {
 }
 
 describe('Display Module', () => {
-  xit('should render on load', () => {
+  it('should render on load', () => {
     render(<Display />);
   })
 
-  xit('should receive closed prop', () => {
+  it('should receive closed prop', () => {
     const { closed } = testData;
 
     const { getByText } = render(<Display closed={closed} />);
@@ -21,7 +21,7 @@ describe('Display Module', () => {
     expect(text).toBeInTheDocument();
   })
 
-  xit('should receive locked prop', () => {
+  it('should receive locked prop', () => {
     const { locked } = testData;
 
     const { getByText } = render(<Display locked={locked} />);
@@ -29,7 +29,7 @@ describe('Display Module', () => {
     expect(text).toBeInTheDocument();
   })
 
-  xit('should return gate open when locked is false and closed if false', () => {
+  it('should return gate open when locked is false and closed if false', () => {
     const test = {
       closed: false,
       locked: false
@@ -51,7 +51,7 @@ describe('Display Module', () => {
     expect(text).toBeInTheDocument();
   })
 
-  xit('should return unlocked with both closed and locked are true', () => {
+  it('should return unlocked with both closed and locked are true', () => {
     const test = {
       closed: true,
       locked: false

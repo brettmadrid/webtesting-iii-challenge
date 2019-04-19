@@ -7,11 +7,11 @@ import "jest-dom/extend-expect";
 import Controls from "./Controls";
 
 describe("Controls Module", () => {
-  xit("should render on load", () => {
+  it("should render on load", () => {
     render(<Controls />);
   });
 
-  xit("should display lock gate text on the button if locked is false and closed is true", () => {
+  it("should display lock gate text on the button if locked is false and closed is true", () => {
     const locked = false;
     const closed = true;
 
@@ -20,7 +20,7 @@ describe("Controls Module", () => {
     expect(text).toBeInTheDocument();
   });
 
-  xit("should display open gate text on the button if locked is false and closed is true", () => {
+  it("should display open gate text on the button if locked is false and closed is true", () => {
     const locked = false;
     const closed = true;
 
